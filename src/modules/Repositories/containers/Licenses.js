@@ -1,22 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getLicenses } from '../redux/actions';
+import { getLicenses, setFilters } from '../redux/actions';
 import Licenses from '../components/Licenses';
 
-function LicensesContainer({ onChange }) {
+function LicensesContainer() {
   const { isLoading, data } = useSelector(state => state.Repositories.licenses);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getLicenses());
   }, [dispatch]);
 
+  const handleChangeLicense = useCallback((e) => {
+    const val = e.target.value;
+    dispatch(setFilters({
+      license: val && val !== 'all' ? val : null,
+      page: null,
+    }));
+  }, [dispatch]);
+
   return (
     <Licenses
       isLoading={isLoading}
       data={data}
-      onChange={onChange}
+      onChange={handleChangeLicense}
     />
   );
 }
 
-export default LicensesContainer;
+export default React.memo(LicensesContainer);

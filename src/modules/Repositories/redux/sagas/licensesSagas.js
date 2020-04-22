@@ -1,4 +1,4 @@
-import { call, takeEvery, put } from 'redux-saga/effects';
+import { call, takeLatest, put } from 'redux-saga/effects';
 import { getLicensesRequest } from '../../api/getLicensesRequest';
 import { GET_LICENSES } from '../actions/types';
 import {
@@ -17,7 +17,7 @@ function* getLicensesSaga() {
 }
 
 export function* licensesWatcher() {
-  yield takeEvery(
+  yield takeLatest(
     GET_LICENSES,
     getLicensesSaga
   );

@@ -5,6 +5,8 @@ import {
   GET_LICENSES,
   GET_LICENSES_SUCCESS,
   GET_LICENSES_ERROR,
+  SET_FILTERS,
+  SEARCH_REPOSITORIES,
 } from './types';
 
 export const getRepositories = payload => ({
@@ -34,5 +36,15 @@ export const getLicensesSuccess = payload => ({
 
 export const getLicensesError = payload => ({
   type: GET_LICENSES_ERROR,
+  payload,
+});
+
+export const setFilters = payload => ({
+  type: SET_FILTERS,
+  payload,
+});
+
+export const searchRepositories = payload => ({
+  type: SEARCH_REPOSITORIES,
   payload,
 });

@@ -1,16 +1,18 @@
 import React from 'react';
 import { Skeleton, Avatar } from '../../../common/components/ui';
 import Licenses from '../containers/Licenses';
+import Search from '../containers/Search';
 
-function Repositories({ isLoading, data, handleChangeLicense }) {
+function Repositories({ isLoading, data }) {
   return (
     <div className="repositories">
       <h1>Javascript репозитории</h1>
       <div>
-        <Licenses onChange={handleChangeLicense} />
+        <Licenses />
+        <Search />
       </div>
       {isLoading && <Skeleton />}
-      {data && data.map(item => (
+      {data && data.length > 0 ? data.map(item => (
         <div key={item.id} style={{display: 'flex'}}>
           <div>
             <Avatar src={item.owner.avatar_url} size={42} />
@@ -22,9 +24,9 @@ function Repositories({ isLoading, data, handleChangeLicense }) {
             Stars: {item.stargazers_count}
           </div>
         </div>
-      ))}
+      )) : 'Ничего не найдено'}
     </div>
   );
 }
 
-export default Repositories;
+export default React.memo(Repositories);

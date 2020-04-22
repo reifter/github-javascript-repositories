@@ -16,4 +16,4 @@ function Licenses({ isLoading, data, onChange }) {
   );
 }
 
-export default Licenses;
+export default React.memo(Licenses);

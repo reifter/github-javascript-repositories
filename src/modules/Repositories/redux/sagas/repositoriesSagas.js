@@ -1,9 +1,10 @@
-import { call, takeEvery, put } from 'redux-saga/effects';
+import { call, takeLatest, put, debounce } from 'redux-saga/effects';
 import { getRepositoriesRequest } from '../../api/getRepositoriesRequest';
-import { GET_REPOSITORIES } from '../actions/types';
+import { GET_REPOSITORIES, SEARCH_REPOSITORIES } from '../actions/types';
 import {
   getRepositoriesSuccess,
-  getRepositoriesError
+  getRepositoriesError,
+  setFilters,
 } from '../actions';
 
 function* getRepositoriesSaga(action) {
@@ -19,9 +20,25 @@ function* getRepositoriesSaga(action) {
   }
 }
 
+function* searchRepositoriesSaga(action) {
+  yield put(setFilters({
+    query: action.payload,
+    page: null,
+  }));
+}
+
 export function* repositoriesWatcher() {
-  yield takeEvery(
+  yield takeLatest(
     GET_REPOSITORIES,
     getRepositoriesSaga
   );
+  yield debounce(
+    600,
+    [
+      SEARCH_REPOSITORIES,
+    ],
+    searchRepositoriesSaga
+  );
+  
+  
 }
