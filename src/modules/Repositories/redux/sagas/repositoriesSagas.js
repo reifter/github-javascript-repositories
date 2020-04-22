@@ -12,7 +12,7 @@ function* getRepositoriesSaga(action) {
     const response = yield call(getRepositoriesRequest, action.payload);
     console.log('response', response);
     yield put(getRepositoriesSuccess({
-      total: response.total_count,
+      totalCount: response.total_count,
       data: response.items,
     }));
   } catch (e) {

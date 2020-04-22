@@ -6,4 +6,4 @@ function Skeleton() {
   );
 }
 
-export default Skeleton;
+export default React.memo(Skeleton);

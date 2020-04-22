@@ -2,6 +2,7 @@ import React from 'react';
 import { Skeleton, Avatar } from '../../../common/components/ui';
 import Licenses from '../containers/Licenses';
 import Search from '../containers/Search';
+import Pagination from '../containers/Pagination';
 
 function Repositories({ isLoading, data }) {
   return (
@@ -25,6 +26,7 @@ function Repositories({ isLoading, data }) {
           </div>
         </div>
       )) : 'Ничего не найдено'}
+      <Pagination />
     </div>
   );
 }
