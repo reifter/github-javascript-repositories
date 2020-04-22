@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { repositories as js } from './repositories';
+import { repositories as list } from './repositories';
+import { licenses } from './licenses';
 
 export const Repositories = combineReducers({
-  js,
+  list,
+  licenses,
 });
