@@ -1,0 +1,68 @@
+.repositories {
+    padding: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.repositories__title {
+    margin-bottom: 24px;
+}
+.repositories__filters {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+.repositories__filters-licenses { margin-bottom: 12px; margin-top: 12px; }
+.repositories__filters-search input,
+.repositories__filters-licenses select { width: 100%; margin-top: 2px;}
+
+@media screen and (min-width: 560px) {
+    .repositories__filters { flex-direction: row; }
+    .repositories__filters-licenses {
+        margin-left: 16px;
+        margin-top: 0;
+        width: 240px;
+    }
+    .repositories__filters-search {
+        width: 240px;
+    }
+}
+
+.repositories__content {
+
+}
+
+.repository-list {
+
+}
+.repository-list__items {
+
+}
+.repository-list__item {
+    display: flex;
+    padding: 0 16px 0 8px;
+    margin-bottom: -1px;
+    border: 1px solid rgb(222, 222, 223);
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #000;
+    min-height: 54px;
+    box-sizing: border-box;
+}
+.repository-list__avatar { padding-right: 8px; }
+.repository-list__name {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 8px;
+}
+
+.repository-list__star { font-size: 18px; }
+
+.repository-list__pagination {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+}

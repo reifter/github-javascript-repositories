@@ -2,8 +2,8 @@ import React from 'react';
 
 function Licenses({ isLoading, data, onChange }) {
   return (
-    <div>
-      Лицензия: <select style={{width: 200}} defaultValue="all" onChange={onChange}>
+    <>
+      Лицензия: <select defaultValue="all" onChange={onChange}>
       <option value='all'>Все</option>
       {isLoading && <option disabled>идёт загрузка...</option>}
       {data && data.map(item => (
@@ -12,7 +12,7 @@ function Licenses({ isLoading, data, onChange }) {
         </option>
       ))}
       </select>
-    </div>
+    </>
   );
 }
 

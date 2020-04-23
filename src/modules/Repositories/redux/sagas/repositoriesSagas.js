@@ -10,7 +10,6 @@ import {
 function* getRepositoriesSaga(action) {
   try {
     const response = yield call(getRepositoriesRequest, action.payload);
-    console.log('response', response);
     yield put(getRepositoriesSuccess({
       totalCount: response.total_count,
       data: response.items,

@@ -5,7 +5,7 @@ function PaginationConteiner({
   totalCount = 0,
   page = 1,
   perPage = 10,
-  siblingRange = 4,
+  siblingRange = 3,
   onChange
 }) {
   const data = useMemo(() => {

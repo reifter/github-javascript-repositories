@@ -9,7 +9,6 @@ import {
 function* getLicensesSaga() {
   try {
     const response = yield call(getLicensesRequest);
-    console.log('response', response);
     yield put(getLicensesSuccess({data: response}));
   } catch (e) {
     yield put(getLicensesError(e));

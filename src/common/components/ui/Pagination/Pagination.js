@@ -1,17 +1,23 @@
 import React from 'react';
+import './pagination.css';
 
 function Pagination({
-  totalCount,
-  countPage,
+  // totalCount,
+  // countPage,
   pages,
   page,
   setCurrenPage,
 }) {
   return (
-    <div>
-      <div>Всего: {totalCount} Страниц: {countPage}</div>
+    <div className="pagination">
       {pages && pages.map(p => (
-        <span key={p} style={page === p ? {backgroundColor: 'red'} : {}} onClick={() => setCurrenPage(p)}>{p}</span>
+        <span 
+          key={p}
+          className={'pagination__page-item' + ((p === 1 && !page) || page === p ? ' active' : '')}
+          onClick={() => setCurrenPage(p)}
+        >
+          {p}
+        </span>
       ))}
     </div>
   );

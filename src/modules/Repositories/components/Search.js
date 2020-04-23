@@ -2,9 +2,9 @@ import React from 'react';
 
 function Search({ onChange, defaultValue = '' }) {
   return (
-    <div>
-      Найти: <input type="text" defaultValue={defaultValue} onChange={onChange} />
-    </div>
+    <>
+      Найти: <input type="text" defaultValue={defaultValue} onChange={onChange} placeholder="Укажите название репозитория" />
+    </>
   );
 }
 

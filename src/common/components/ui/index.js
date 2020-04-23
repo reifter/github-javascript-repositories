@@ -1,9 +1,9 @@
-import Skeleton from './Skeleton';
-import Avatar from './Avatar';
+import Loader from './Loader/';
+import Avatar from './Avatar/';
 import Pagination from './Pagination/';
 
 export {
-  Skeleton,
+  Loader,
   Avatar,
   Pagination,
 };
