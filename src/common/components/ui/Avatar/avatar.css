@@ -1,1 +1,2 @@
 .avatar { display: flex; }
+.avatar img { width: 100%; display: block; }
