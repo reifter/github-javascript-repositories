@@ -20,4 +20,5 @@ jobs:
           git pull origin development
           git status
           npm install --only=prod
+          npm run build
 
