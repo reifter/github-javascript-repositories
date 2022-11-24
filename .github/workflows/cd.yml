@@ -19,6 +19,6 @@ jobs:
           git checkout development
           git pull origin development
           git status
-          npm install --only=prod
+          npm install
           npm run build
 
