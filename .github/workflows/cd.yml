@@ -14,10 +14,12 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
-        script: |
-          cd /var/www/rkul.ru/github-javascript-repositories
-          git checkout development
-          git pull origin development
-          git status
-          npm install --only=prod
+        script: whoami
+
+        # |
+        #   cd /var/www/rkul.ru/github-javascript-repositories
+        #   git checkout development
+        #   git pull origin development
+        #   git status
+        #   npm install --only=prod
 
